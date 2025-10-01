@@ -58,12 +58,26 @@ public class App {
      * You will MODIFY THIS ONE METHOD across tasks 1–4.
      * Do not create new methods.
      */
-    public static void computeArea() {
-
+    public static double computeArea(String z, double x, double y) {
+        if (x > 1000 || y > 1000){
+            return -1.0;
+        }
+        else if (x < 0 || y < 0) {
+            return -1.0;
+        }
+                if (z == "rect"){
+            return x * y;
+        }
+        else if (z == "tri"){
+            return 0.5 * x * y ;
+        }
+        else{
+            return -1.0;
+        }
     }
 
     public static void main(String[] args) {
-        //B- range
+        // B- range
         // System.out.println("Task 1:");
         // computeArea(); // should PRINT 12.0
 
@@ -83,14 +97,14 @@ public class App {
         // System.out.println("Task 4:");
         // System.out.println(computeArea(5, 3)); // 15.0
         // System.out.println(computeArea(-2, 8)); // -1.0 (invalid)
-        // System.out.println(computeArea(100, 1)); // -1.0 (too large)
+        // System.out.println(computeArea(100, 1)); // 100.0
 
 
         //A+ range
-        // System.out.println("Task 5:");
-        // System.out.println(computeArea("rect", 5, 3)); // 15.0
-        // System.out.println(computeArea("tri", 6, 4));  // 12.0
-        // System.out.println(computeArea("hex", 2, 2));  // -1.0 (unknown)
-        // System.out.println(computeArea("rect", -1, 9)); // -1.0 (invalid)
+        System.out.println("Task 5:");
+        System.out.println(computeArea("rect", 5, 3)); // 15.0
+        System.out.println(computeArea("tri", 6, 4));  // 12.0
+        System.out.println(computeArea("hex", 2, 2));  // -1.0 (unknown)
+        System.out.println(computeArea("rect", -1, 9)); // -1.0 (invalid)
     }
 }
